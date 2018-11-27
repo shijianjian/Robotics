@@ -85,10 +85,9 @@ This is how I modified the `perception_step()` function:
    ```
 - Update worldmap **if** pitch and roll are close to 0, to increase map fidelity:
    ```python
-   if Rover.pitch < Rover.max_pitch and Rover.roll < Rover.max_roll:
-        Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
-        Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
-        Rover.worldmap[terrain_y_world, terrain_x_world, 2] += 1
+    Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
+    Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
+    Rover.worldmap[terrain_y_world, terrain_x_world, 2] += 1
    ```
 - And finally create polar coordinates. There are two modes created, one is for searching around for the golden rock, another is for approaching to the rock once it has been found.
    ```python
